@@ -119,12 +119,3 @@ console.log("----------------------")
 console.log("Employee Name: " + employeeExample7.name)
 console.log("Employee Salary: " + employeeExample6.salary)
 console.log("----------------------")
-
-
-
-
-
-
-
-
-
