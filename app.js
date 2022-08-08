@@ -6,7 +6,7 @@ var IDCounter = 0
 
 function getUniqueID(){
     IDCounter = IDCounter + 1
-    return String(IDCounter).padStart(4, '0')
+    return String(IDCounter).padStart(4, '1000')
 }
 
 function getSalary(eLevel){
