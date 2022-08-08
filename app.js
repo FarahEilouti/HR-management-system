@@ -30,82 +30,36 @@ function getNetSalary(eSalary){
 }
 
 
-var employeeExample1 = {
-    id: getUniqueID(),
-    name: "Ghazi Samer",
-    department: departments[0],
-    level: levels[2],
-    salary: getSalary("Senior"),
-    netSalary: 0, 
-    image: "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg", 
-};
+function Employee(employeeName, employeeDepartment, employeeLevel, employeeSalary){
+    this.id = getUniqueID();
+    this.name = employeeName;
+    this.department = employeeDepartment;
+    this.level = employeeLevel;
+    this.salary = employeeSalary;
+    this.netSalary = 0;
+    this.image = "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg";
+}
 
-var employeeExample2 = {
-    id: getUniqueID(),
-    name: "Lana Ali",
-    department: departments[3],
-    level: levels[2],
-    salary: getSalary("Senior"),
-    netSalary: 0, 
+const employeeExample1 = new Employee("Ghazi Samer ", departments[0], levels[2], getSalary("Senior"))
+employeeExample1.netSalary =  getNetSalary(employeeExample1.salary)
 
-    image: "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg", 
-};
-var employeeExample3 = {
-    id: getUniqueID(),
-    name: "Tamara Ayyoub",
-    department: departments[1],
-    level: levels[2],
-    salary: getSalary("Senior"),
-    netSalary: 0, 
-    image: "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg", 
-};
-var employeeExample4 = {
-    id: getUniqueID(),
-    name: "Safi Waleed",
-    department: departments[0],
-    level: levels[1],
-    salary: getSalary("Mid"),
-    netSalary: 0, 
-    image: "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg", 
-};
-var employeeExample5 = {
-    id: getUniqueID(),
-    name: "Omar Zaid",
-    department: departments[2],
-    level: levels[2],
-    salary: getSalary("Senior"),
-    netSalary: 0, 
-    image: "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg", 
-};
+const employeeExample2 = new Employee("Lana Ali", departments[3], levels[2], getSalary("Senior"))
+employeeExample2.netSalary =  getNetSalary(employeeExample2.salary)
 
-var employeeExample6 = {
-    id: getUniqueID(),
-    name: "Rana Saleh",
-    department: departments[2],
-    level: levels[0],
-    salary: getSalary("Junior"),
-    netSalary: 0, 
-    image: "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg", 
-};
+const employeeExample3 = new Employee("Tamara Ayyoub", departments[1], levels[2], getSalary("Senior"))
+employeeExample3.netSalary =  getNetSalary(employeeExample3.salary)
 
-var employeeExample7 = {
-    id: getUniqueID(),
-    name: "Hadi Ahmad",
-    department: departments[3],
-    level: levels[2],
-    salary: getSalary("Senior"),
-    netSalary: 0, 
-    image: "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg", 
-};
+const employeeExample4 = new Employee("Safi Waleed", departments[0], levels[2], getSalary("Mid"))
+employeeExample4.netSalary =  getNetSalary(employeeExample4.salary)
 
+const employeeExample5 = new Employee("Omar Zaid", departments[2], levels[2], getSalary("Senior"))
+employeeExample5.netSalary =  getNetSalary(employeeExample5.salary)
 
-employeeExample1.netSalary = getNetSalary(employeeExample1.salary)
-employeeExample2.netSalary = getNetSalary(employeeExample2.salary)
-employeeExample3.netSalary = getNetSalary(employeeExample3.salary)
-employeeExample4.netSalary = getNetSalary(employeeExample4.salary)
-employeeExample5.netSalary = getNetSalary(employeeExample5.salary)
-employeeExample6.netSalary = getNetSalary(employeeExample6.salary)
-employeeExample7.netSalary = getNetSalary(employeeExample7.salary)
+const employeeExample6 = new Employee("Rana Saleh", departments[2], levels[0], getSalary("Junior"))
+employeeExample6.netSalary =  getNetSalary(employeeExample6.salary)
+
+const employeeExample7 = new Employee("Hadi Ahmad", departments[3], levels[2], getSalary("Senior"))
+employeeExample7.netSalary =  getNetSalary(employeeExample7.salary)
 
 
 console.log("Employee Name: " + employeeExample1.name)
@@ -156,3 +110,19 @@ console.log("Employee ID: " + employeeExample7.id)
 console.log("Employee netSalary: " + employeeExample7.netSalary)
 
 console.log("----------------------")
+
+Employee.prototype.eLevel = function(){
+    document.write(`<div class=card id=d${this.id}>
+    <img src="${this.image}" alt="employee_image">
+    <h6>Employee Name: ${this.name} </h6>
+    <h6> Employee Department: ${this.department} </h6>
+    <h6> Employee Salary: ${this.salary} </h6></div><br>`);
+};
+
+employeeExample1.eLevel();
+employeeExample2.eLevel();
+employeeExample3.eLevel();
+employeeExample4.eLevel();
+employeeExample5.eLevel();
+employeeExample6.eLevel();
+employeeExample7.eLevel();
