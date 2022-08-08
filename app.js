@@ -37,7 +37,7 @@ function Employee(employeeName, employeeDepartment, employeeLevel, employeeSalar
     this.level = employeeLevel;
     this.salary = employeeSalary;
     this.netSalary = 0;
-    this.image = "https://thumbs.dreamstime.com/z/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg";
+    this.image = "https://cdn-icons.flaticon.com/png/512/2815/premium/2815428.png?token=exp=1659969558~hmac=d9e5086bf4cb2a55701e19e18c898e8a";
 }
 
 const employeeExample1 = new Employee("Ghazi Samer ", departments[0], levels[2], getSalary("Senior"))
@@ -114,9 +114,10 @@ console.log("----------------------")
 Employee.prototype.eLevel = function(){
     document.write(`<div class=card id=d${this.id}>
     <img src="${this.image}" alt="employee_image">
-    <h6>Employee Name: ${this.name} </h6>
-    <h6> Employee Department: ${this.department} </h6>
-    <h6> Employee Salary: ${this.salary} </h6></div><br>`);
+    <h6>Employee: ${this.name} </h6>
+    <h6> ID: ${this.id} </h6>
+    <h6> Department: ${this.department} </h6>
+    <h6> Salary: ${this.salary} </h6></div><br>`);
 };
 
 employeeExample1.eLevel();
