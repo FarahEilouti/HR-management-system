@@ -112,10 +112,11 @@ console.log("Employee netSalary: " + employeeExample7.netSalary)
 console.log("----------------------")
 
 Employee.prototype.eLevel = function(){
-    document.write(`<h6> Employee Name: ${this.name} </h6><br>
-    <h6> Employee Department: ${this.department} </h6><br>
-    <h6> Employee Salary: ${this.salary} </h6><br>
-    <h4> -------------------------------------------</h4><br>`);
+    document.write(`<div class=card id=d${this.id}>
+    <img src="${this.image}" alt="employee_image">
+    <h6>Employee Name: ${this.name} </h6>
+    <h6> Employee Department: ${this.department} </h6>
+    <h6> Employee Salary: ${this.salary} </h6></div><br>`);
 };
 
 employeeExample1.eLevel();
