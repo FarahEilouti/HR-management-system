@@ -1,5 +1,3 @@
-
-
 var departments = ["Administration", "Marketing", "Development", "Finance"]
 var levels = ["Junior", "Mid", "Senior"]
 var IDCounter = 0
@@ -30,36 +28,36 @@ function getNetSalary(eSalary){
 }
 
 
-function Employee(employeeName, employeeDepartment, employeeLevel, employeeSalary){
+function Employee(employeeName, employeeDepartment, employeeLevel, employeeSalary, employee_image){
     this.id = getUniqueID();
     this.name = employeeName;
     this.department = employeeDepartment;
     this.level = employeeLevel;
     this.salary = employeeSalary;
     this.netSalary = 0;
-    this.image = "./assets/person-logo.png";
+    this.image = employee_image;
 }
 
 
-const employeeExample1 = new Employee("Ghazi Samer ", departments[0], levels[2], getSalary("Senior"))
+const employeeExample1 = new Employee("Ghazi Samer ", departments[0], levels[2], getSalary("Senior"),"./assets/man-employee5.jpg" )
 employeeExample1.netSalary =  getNetSalary(employeeExample1.salary)
 
-const employeeExample2 = new Employee("Lana Ali", departments[3], levels[2], getSalary("Senior"))
+const employeeExample2 = new Employee("Lana Ali", departments[3], levels[2], getSalary("Senior"),"./assets/woman-employee1.jpg" )
 employeeExample2.netSalary =  getNetSalary(employeeExample2.salary)
 
-const employeeExample3 = new Employee("Tamara Ayyoub", departments[1], levels[2], getSalary("Senior"))
+const employeeExample3 = new Employee("Tamara Ayyoub", departments[1], levels[2], getSalary("Senior"),"./assets/woman-employee3.jpg")
 employeeExample3.netSalary =  getNetSalary(employeeExample3.salary)
 
-const employeeExample4 = new Employee("Safi Waleed", departments[0], levels[2], getSalary("Mid"))
+const employeeExample4 = new Employee("Safi Waleed", departments[0], levels[2], getSalary("Mid"),"./assets/man-employee2.jpg")
 employeeExample4.netSalary =  getNetSalary(employeeExample4.salary)
 
-const employeeExample5 = new Employee("Omar Zaid", departments[2], levels[2], getSalary("Senior"))
+const employeeExample5 = new Employee("Omar Zaid", departments[2], levels[2], getSalary("Senior"),"./assets/man-employee3.jpg")
 employeeExample5.netSalary =  getNetSalary(employeeExample5.salary)
 
-const employeeExample6 = new Employee("Rana Saleh", departments[2], levels[0], getSalary("Junior"))
+const employeeExample6 = new Employee("Rana Saleh", departments[2], levels[0], getSalary("Junior"),"./assets/woman-employee2.jpg")
 employeeExample6.netSalary =  getNetSalary(employeeExample6.salary)
 
-const employeeExample7 = new Employee("Hadi Ahmad", departments[3], levels[2], getSalary("Senior"))
+const employeeExample7 = new Employee("Hadi Ahmad", departments[3], levels[2], getSalary("Senior"),"./assets/man-employee4.jpg")
 employeeExample7.netSalary =  getNetSalary(employeeExample7.salary)
 
 
@@ -118,6 +116,7 @@ Employee.prototype.eLevel = function(){
     <h6>Employee: ${this.name} </h6>
     <h6> ID: ${this.id} </h6>
     <h6> Department: ${this.department} </h6>
+    <h6>Level: ${this.level} </h6>
     <h6> Salary: ${this.salary} </h6></div><br>`);
 };
 
